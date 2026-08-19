@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NutriPlan | Food Log</title>
+    <link rel="icon" href="./src/images/favicon.png" />
+    <link rel="stylesheet" href="./src/css/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html"><span>✦</span>NutriPlan</a>
+      <nav>
+        <a href="index.html">Meals</a>
+        <a href="product-scanner.html">Product Scanner</a>
+        <a class="active" href="food-log.html">Food Log</a>
+      </nav>
+    </header>
+    <main class="shell">
+      <section class="hero compact">
+        <p class="eyebrow" id="foodlog-date"></p>
+        <h1>Today's food log</h1>
+        <p>Monitor your daily nutrition against your targets.</p>
+      </section>
+      <section id="nutrition-summary" class="summary-grid"></section>
+      <section class="log-header">
+        <h2>Logged items</h2>
+        <button id="clear-foodlog" class="text-button">Clear today</button>
+      </section>
+      <section id="logged-items-list" class="log-list"></section>
+      <section class="quick-actions">
+        <a href="index.html">＋ Log a meal</a
+        ><a href="product-scanner.html">⌁ Scan a product</a
+        ><button id="custom-entry-btn">＋ Custom entry</button>
+      </section>
+    </main>
+    <div id="toast" class="toast" role="status"></div>
+    <script src="./src/js/pages/food-log.js"></script>
+  </body>
+</html>

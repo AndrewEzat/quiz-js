@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NutriPlan | Product Scanner</title>
+    <link rel="icon" href="./src/images/favicon.png" />
+    <link rel="stylesheet" href="./src/css/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html"><span>&#10022;</span>NutriPlan</a>
+      <nav>
+        <a href="index.html">Meals</a
+        ><a class="active" href="product-scanner.html">Product Scanner</a
+        ><a href="food-log.html">Food Log</a>
+      </nav>
+    </header>
+    <main class="shell">
+      <section class="hero compact">
+        <p class="eyebrow">Packaged food, simplified</p>
+        <h1>Product Scanner</h1>
+        <p>
+          Search by product name or barcode, then add a serving to your log.
+        </p>
+      </section>
+      <section class="scanner-panel">
+        <form id="product-form" class="scanner-form">
+          <input
+            id="product-search-input"
+            placeholder="Search Pepsi, Nutella, yogurt..."
+            autocomplete="off"
+          /><button>Search products</button>
+        </form>
+        <form id="barcode-form" class="barcode-form">
+          <input
+            id="barcode-input"
+            inputmode="numeric"
+            placeholder="Enter barcode"
+          /><button>Find barcode</button>
+        </form>
+      </section>
+      <p id="products-count" class="count"></p>
+      <section id="products-grid" class="product-grid"></section>
+    </main>
+    <div id="toast" class="toast" role="status"></div>
+    <script src="./src/js/pages/product-scanner.js"></script>
+  </body>
+</html>
