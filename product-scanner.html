@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NutriPlan | Product Scanner</title>
+    <link rel="icon" href="./src/images/favicon.png" />
+    <link rel="stylesheet" href="./bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./src/css/index.css" />
+    <link rel="stylesheet" href="./src/css/style.css" />
+  </head>
+  <body>
+    <header
+      class="topbar d-flex flex-column position-fixed top-0 start-0 vh-100 border-end"
+    >
+      <a class="brand d-flex align-items-center gap-2 mb-4" href="index.html">
+        <span><i class="bi bi-leaf-fill"></i></span>
+        <span class="brand-text d-flex flex-column lh-sm">
+          NutriPlan
+          <small class="brand-subtitle">Your Wellness Journey</small>
+        </span>
+      </a>
+
+      <p class="nav-label px-2 mb-2">Main Menu</p>
+      <nav class="d-flex flex-column gap-1">
+        <a href="index.html"
+          ><i class="bi bi-egg-fried"></i><span>Meals &amp; Recipes</span></a
+        >
+        <a class="active" href="product-scanner.html"
+          ><i class="bi bi-upc-scan"></i><span>Product Scanner</span></a
+        >
+        <a href="food-log.html"
+          ><i class="bi bi-clipboard2-pulse"></i><span>Food Log</span></a
+        >
+      </nav>
+
+      <div class="user-card mt-auto d-flex align-items-center gap-2">
+        <img
+          src="https://randomuser.me/api/portraits/men/32.jpg"
+          alt="Youssef Amir"
+          class="user-avatar"
+        />
+        <div class="flex-grow-1 lh-sm">
+          <div class="user-name">Youssef Amir</div>
+          <div class="user-plan">Premium Member</div>
+        </div>
+        <i class="bi bi-chevron-down text-muted"></i>
+      </div>
+    </header>
+
+    <main class="shell container-fluid">
+      <section class="hero compact mb-4">
+        <p class="eyebrow">Packaged food, simplified</p>
+        <h1>Product Scanner</h1>
+        <p>Search by product name or barcode, then add a serving to your log.</p>
+      </section>
+
+      <section class="scanner-panel d-flex flex-wrap gap-3 mb-3">
+        <form id="product-form" class="scanner-form input-group flex-grow-1">
+          <span class="input-group-text bg-white border-end-0"
+            ><i class="bi bi-search"></i
+          ></span>
+          <input
+            id="product-search-input"
+            class="form-control border-start-0"
+            placeholder="Search Pepsi, Nutella, yogurt..."
+            autocomplete="off"
+          />
+          <button class="btn btn-success" type="submit">Search products</button>
+        </form>
+        <form id="barcode-form" class="barcode-form input-group">
+          <span class="input-group-text bg-white border-end-0"
+            ><i class="bi bi-upc"></i
+          ></span>
+          <input
+            id="barcode-input"
+            class="form-control border-start-0"
+            inputmode="numeric"
+            placeholder="Enter barcode"
+          />
+          <button class="btn btn-outline-success" type="submit">Find barcode</button>
+        </form>
+      </section>
+
+      <p id="products-count" class="count"></p>
+      <section id="products-grid" class="product-grid"></section>
+    </main>
+
+    <div id="toast" class="toast" role="status"></div>
+    <script src="./bootstrap.bundle.min.js"></script>
+    <script src="./app.js"></script>
+    <script type="module" src="./src/js/main.js"></script>
+    <script type="module" src="./src/js/ui/components.js"></script>
+  </body>
+</html>

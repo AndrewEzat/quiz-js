@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NutriPlan - Meal Details</title>
+    <link rel="icon" href="./src/images/favicon.png" />
+    <script>
+      window.FontAwesomeConfig = { autoReplaceSvg: "nest" };
+    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./bootstrap.min.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./src/css/index.css" />
+    <link rel="stylesheet" href="./src/css/style.css" />
+  </head>
+  <body class="bg-gray-50 font-sans">
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+    <div
+      id="sidebar"
+      class="fixed left-0 top-0 h-full w-72 bg-white border-r border-gray-200 flex flex-col z-40"
+    >
+      <div class="p-6 border-b border-gray-100">
+        <div class="flex items-center gap-3">
+          <div
+            class="w-10 h-10 rounded-xl bg-linear-to-br from-emerald-400 to-teal-600 flex items-center justify-center"
+          >
+            <i class="fa-solid fa-leaf text-white text-lg"></i>
+          </div>
+          <div>
+            <h1 class="text-xl font-bold text-gray-900">NutriPlan</h1>
+            <p class="text-xs text-gray-500">Your Wellness Journey</p>
+          </div>
+        </div>
+      </div>
+      <nav class="flex-1 px-4 py-6 overflow-y-auto">
+        <div class="mb-6">
+          <p
+            class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3 px-3"
+          >
+            Main Menu
+          </p>
+          <ul class="space-y-1">
+            <li>
+              <a
+                class="flex items-center gap-3 px-3 py-2.5 text-gray-600 hover:bg-gray-50 rounded-lg transition-all"
+                href="index.html"
+                ><i class="fa-solid fa-utensils w-5"></i
+                ><span class="font-semibold">Meals & Recipes</span></a
+              >
+            </li>
+            <li>
+              <a
+                class="flex items-center gap-3 px-3 py-2.5 text-gray-600 hover:bg-gray-50 rounded-lg transition-all"
+                href="product-scanner.html"
+                ><i class="fa-solid fa-barcode w-5"></i
+                ><span class="font-medium">Product Scanner</span></a
+              >
+            </li>
+            <li>
+              <a
+                class="flex items-center gap-3 px-3 py-2.5 text-gray-600 hover:bg-gray-50 rounded-lg transition-all"
+                href="food-log.html"
+                ><i class="fa-solid fa-clipboard-list w-5"></i
+                ><span class="font-medium">Food Log</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div id="main-content" class="ml-72">
+      <header class="bg-white border-b border-gray-200 sticky top-0 z-30">
+        <div class="px-8 py-4">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-4 flex-1">
+              <div>
+                <h1 class="text-2xl font-bold text-gray-900">Meal Details</h1>
+                <p class="text-sm text-gray-500 mt-1">
+                  Detailed recipe information
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="px-8 py-8 bg-gray-50 min-h-screen">
+        <section id="meal-details" class="max-w-7xl mx-auto">
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden mb-8">
+            <div class="relative h-80 md:h-96">
+              <img src="" alt="Meal" class="w-full h-full object-cover" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"
+              ></div>
+              <div class="absolute bottom-0 left-0 right-0 p-8">
+                <div class="flex items-center gap-3 mb-3"></div>
+                <h1 class="text-3xl md:text-4xl font-bold text-white mb-2"></h1>
+                <div class="flex items-center gap-6 text-white/90"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-3 mb-8">
+            <button
+              id="log-meal-btn"
+              class="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-xl font-semibold"
+            >
+              Log This Meal
+            </button>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2 space-y-8">
+              <div class="bg-white rounded-2xl shadow-lg p-6">
+                <h2
+                  class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2"
+                >
+                  <i class="fa-solid fa-list-check text-emerald-600"></i>
+                  Ingredients
+                  <span class="text-sm font-normal text-gray-500 ml-auto"
+                    >-- items</span
+                  >
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3"></div>
+              </div>
+
+              <div class="bg-white rounded-2xl shadow-lg p-6">
+                <h2
+                  class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2"
+                >
+                  Instructions
+                </h2>
+                <div class="space-y-4"></div>
+              </div>
+
+              <div class="bg-white rounded-2xl shadow-lg p-6">
+                <h2
+                  class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2"
+                >
+                  Video
+                </h2>
+                <div
+                  class="relative aspect-video rounded-xl overflow-hidden bg-gray-100"
+                ></div>
+              </div>
+            </div>
+
+            <div class="space-y-6">
+              <div class="bg-white rounded-2xl shadow-lg p-6 sticky top-24">
+                <h2
+                  class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2"
+                >
+                  Nutrition Facts
+                </h2>
+                <div id="nutrition-facts-container"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      (function () {
+        const params = new URLSearchParams(location.search);
+        const id = params.get("id");
+        if (id) location.hash = "meal-" + id;
+      })();
+    </script>
+
+    <script src="./bootstrap.bundle.min.js"></script>
+    <script src="./app.js"></script>
+    <script type="module" src="./src/js/main.js"></script>
+    <script type="module" src="./src/js/ui/components.js"></script>
+  </body>
+</html>
